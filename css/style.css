@@ -1,0 +1,222 @@
+html {
+  scroll-behavior: smooth;
+}
+* {
+  font-family: "Rubik", sans-serif;
+  box-sizing: border-box !important;
+}
+body {
+  background-color: #f3f5f8;
+}
+
+/* NAVBAR */
+/* toggle icon on small screen changes */
+.animated-icon3 {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  margin: 0px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.animated-icon3 span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  border-radius: 9px;
+  opacity: 1;
+  background: gray;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.animated-icon3 span:nth-child(1) {
+  top: 0px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+.animated-icon3 span:nth-child(2) {
+  top: 10px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+.animated-icon3 span:nth-child(3) {
+  top: 20px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+.animated-icon3.open span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 0px;
+  left: 8px;
+}
+
+.animated-icon3.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.animated-icon3.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 21px;
+  left: 8px;
+}
+
+a {
+  text-decoration: none !important;
+  color: black;
+}
+.text-deco:hover {
+  color: white !important;
+}
+.underline {
+  width: 20%;
+  height: 5px;
+  margin: 0 auto;
+  background-color: green;
+}
+
+.total-cases {
+  background-color: rgba(43, 111, 243, 0.05);
+}
+.active-cases {
+  background-color: rgba(243, 153, 17, 0.09);
+}
+.recovered {
+  background-color: rgba(22, 180, 66, 0.05);
+}
+.total-death {
+  background: rgba(170, 42, 42, 0.05);
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.pos-abs {
+  position: absolute;
+}
+
+.tracker-board-circle {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  border-radius: 50%;
+  top: 0;
+  left: 25%;
+  opacity: 0.8;
+}
+.footer-circle {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  border-radius: 50%;
+  top: -30px;
+  left: 44%;
+  opacity: 0.5;
+  background: rgba(43, 111, 243, 0.07);
+}
+@media screen and (max-width: 425px) {
+  .footer-circle {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    border-radius: 50%;
+    top: -30px;
+    left: 10%;
+    opacity: 0.5;
+    background: rgba(43, 111, 243, 0.1);
+  }
+  .col-5 p {
+    font-size: 0.8rem;
+  }
+}
+
+.text-orange {
+  color: orange;
+}
+.text-maroon {
+  color: #d63232;
+}
+
+.line-height {
+  line-height: 2rem;
+}
+#loading {
+  height: 100vh;
+  width: 100vw;
+  top: 0px;
+}
+.lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #fcf;
+  border-color: #fcf transparent #fcf transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+
+/* @media screen and (max-width: 425px) {
+  #symptoms {
+    background: linear-gradient(
+        to left,
+        rgba(221, 224, 224, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url("../assets/doctor.png") top/cover no-repeat;
+  }
+} */

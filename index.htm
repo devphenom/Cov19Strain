@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- title -->
+    <title>Cov19Strain</title>
+    <!-- Bootstrap Link -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <!-- font awesome -->
+    <!-- <link rel="stylesheet" href="./css/all.css" /> -->
+    <script src="./js/all.js"></script>
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- aos css-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- main css-->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/favicon_io/site.webmanifest" />
+    <!---------------------- CDNs----------------- -->
+    <!-- Bootstrap CSS CDN -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    /> -->
+
+    <!-- fontawesome CDN -->
+    <!-- <script
+      src="https://kit.fontawesome.com/39126212e5.js"
+      crossorigin="anonymous"
+    ></script> -->
+  </head>
+  <body>
+    <section id="body" class="d-none">
+      <!-- NAVBAR -->
+      <nav class="navbar navbar-expand-sm navbar-light shadow-sm bg-white px-2">
+        <!-- navbar brand -->
+        <a href="./index.htm" class="navbar-brand text-primary ml-2"
+          ><img src="./assets/logo.png" alt="" />
+          <strong>Cov19Strain</strong></a
+        >
+        <!-- nav toggler -->
+        <button
+          class="navbar-toggler p-2 m-2"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarLinks"
+          aria-controls="navbarLinks"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <div class="animated-icon3">
+            <span></span><span></span><span></span>
+          </div>
+        </button>
+
+        <!-- nav links -->
+        <div id="navbarLinks" class="navbar-collapse collapse text-center">
+          <ul class="navbar-nav text-uppercase mx-auto">
+            <li class="nav-item mx-2 active">
+              <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a href="#symptoms" class="nav-link">Symptoms</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a href="#protection" class="nav-link">Protection</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li id="last-update" class="nav-item mx-2">
+              Updated: <span class="updated-time"></span>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- FIRST SECTION -->
+      <header id="covid-19-tracker" class="py-4">
+        <div class="container">
+          <div class="row">
+            <div class="col"><h4>COVID-19 Tracker</h4></div>
+          </div>
+          <div class="row bg-white p-2 rounded">
+            <!-- total cases -->
+            <div class="col-md-6 col-lg-3 pos-rel">
+              <div class="text-center total-cases p-2 m-2 rounded pos-rel">
+                <h6>Total Cases</h6>
+                <h3 class="text-primary" id="totalConfirmed">296,200,000</h3>
+                <p class="text-muted" id="newConfirmed">+3400</p>
+              </div>
+              <div class="total-cases tracker-board-circle"></div>
+            </div>
+            <!-- active cases -->
+            <div class="col-md-6 col-lg-3 pos-rel">
+              <div class="text-center active-cases p-2 m-2 rounded pos-rel">
+                <h6>Active Cases</h6>
+                <h3 class="text-orange" id="totalActive">296,200,000</h3>
+                <p class="text-muted" id="newActive">+3400</p>
+              </div>
+              <div class="active-cases tracker-board-circle"></div>
+            </div>
+            <!-- recovered -->
+            <div class="col-md-6 col-lg-3 pos-rel">
+              <div class="text-center recovered p-2 m-2 rounded pos-rel">
+                <h6>Recovered</h6>
+                <h3 class="text-success" id="totalRecovered">296,200,000</h3>
+                <p class="text-muted" id="newRecovered">+3400</p>
+              </div>
+              <div class="recovered tracker-board-circle"></div>
+            </div>
+
+            <!-- total death -->
+            <div class="col-md-6 col-lg-3 pos-rel">
+              <div class="text-center total-death p-2 m-2 rounded pos-rel">
+                <h6>Total Deaths</h6>
+                <h3 class="text-danger" id="totalDeath">296,200,000</h3>
+                <p class="text-muted" id="newDeath">+3400</p>
+              </div>
+              <div class="total-death tracker-board-circle"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section id="top-affected-countries" class="py-2">
+        <div class="container bg-white">
+          <div class="row p-2">
+            <div class="col-lg-8">
+              <div class="row">
+                <div class="col-12">
+                  <h3><strong>Top Affected Countries</strong></h3>
+                  <p class="text-muted">
+                    Updated: <span class="updated-time"></span>
+                  </p>
+                </div>
+              </div>
+              <div class="row p-2">
+                <div class="col-md-6 rounded border py-2">
+                  <h5 class="text-muted"><strong>Countries</strong></h5>
+                  <ul class="list-group" id="top-cases"></ul>
+                </div>
+                <div class="col-md-6 py-2" id="country"></div>
+              </div>
+            </div>
+            <div class="d-none d-lg-inline-block col-lg-4">
+              <img src="./assets/map.png" alt="World map" class="img-fluid" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- symptoms -->
+      <section id="symptoms" class="py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <h5 class="text-danger my-3">
+                <span class="rounded-pill py-2 px-4 total-death">
+                  Corona Virus Symptoms</span
+                >
+              </h5>
+              <h1>What are the Symptoms?</h1>
+              <p class="line-height text-justify">
+                People may be sick with the virus for 1 to 14 days before
+                developing symptoms. The most common symptoms of coronavirus
+                disease (COVID-19) are fever, tiredness, and dry cough. Most
+                people (about 80%) recover from the disease without needing
+                special treatment. More rarely, the disease can be serious and
+                even fatal. Older people, and people with other medical
+                conditions (such as asthma, diabetes, or heart disease), may be
+                more vulnerable to becoming severely ill.
+              </p>
+              <div class="bg-white p-3 rounded my-2">
+                <h5><strong> Most Common Symptoms</strong></h5>
+                <div class="text-muted">
+                  <span class="mr-3 d-inline-block"
+                    ><i
+                      class="fa fa-check-circle text-muted"
+                      aria-hidden="true"
+                    ></i>
+                    Dry Cough
+                  </span>
+                  <span class="mr-3 d-inline-block"
+                    ><i
+                      class="fa fa-check-circle text-muted"
+                      aria-hidden="true"
+                    ></i>
+                    Fever
+                  </span>
+                  <span class="mr-3 d-inline-block"
+                    ><i
+                      class="fa fa-check-circle text-muted"
+                      aria-hidden="true"
+                    ></i>
+                    Tiredness
+                  </span>
+                </div>
+              </div>
+              <div class="bg-white p-3 rounded my-2 line-height">
+                <h5><strong> Less Common Symptoms</strong></h5>
+                <div class="text-muted">
+                  <span class="mr-3 d-inline-block"
+                    ><i
+                      class="fas fa-check-circle text-muted mr-1"
+                      aria-hidden="true"
+                    ></i>
+                    Aches and Pains
+                  </span>
+                  <span class="mr-3 d-inline-block"
+                    ><i
+                      class="fas fa-check-circle text-muted mr-1"
+                      aria-hidden="true"
+                    ></i>
+                    Sore throat
+                  </span>
+                  <span class="mr-3 d-inline-block"
+                    ><i
+                      class="fas fa-check-circle text-muted mr-1"
+                      aria-hidden="true"
+                    ></i>
+                    Diarrhoea
+                  </span>
+                  <span class="mr-3 d-inline-block"
+                    ><i
+                      class="fas fa-check-circle text-muted mr-1"
+                      aria-hidden="true"
+                    ></i>
+                    Conjuctivitis
+                  </span>
+                  <span class="mr-3 d-inline-block"
+                    ><i
+                      class="fas fa-check-circle text-muted mr-1"
+                      aria-hidden="true"
+                    ></i>
+                    Headache
+                  </span>
+                  <br />
+                  <span class="mr-3 d-inline-block"
+                    ><i
+                      class="fas fa-check-circle text-muted mr-1"
+                      aria-hidden="true"
+                    ></i>
+                    Loss of Taste or Smell
+                  </span>
+                  <span class="mr-3 d-inline-block"
+                    ><i
+                      class="fas fa-check-circle text-muted mr-1"
+                      aria-hidden="true"
+                    ></i>
+                    A rash on skin or discolouration of fingers or toes
+                  </span>
+                </div>
+              </div>
+              <div class="bg-white p-3 rounded my-2 shadow-sm line-height">
+                <h5><strong> Serious Symptoms</strong></h5>
+                <div class="text-muted">
+                  <span class="mr-3 d-inline-block">
+                    <i
+                      class="fa fa-check-circle text-muted"
+                      aria-hidden="true"
+                    ></i>
+                    Difficulty breathing or shortness of death
+                  </span>
+                  <span class="mr-3 d-inline-block">
+                    <i
+                      class="fa fa-check-circle text-muted"
+                      aria-hidden="true"
+                    ></i>
+                    Chest pain or pressure
+                  </span>
+                  <span class="mr-3 d-inline-block">
+                    <i class="fas fa-check-circle"></i>
+                    Loss of speech or movement
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 d-none d-md-inline-block text-center">
+              <img src="./assets/doctor.png" alt="Doctor" class="img-fluid" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- protection -->
+      <section id="protection" class="py-5">
+        <div class="container bg-white py-5 pr-3 rounded">
+          <div class="row">
+            <div class="col-md-5 d-none d-md-block text-lg-center">
+              <img src="./assets/mask-man.png" alt="mask man" class="" />
+            </div>
+            <div class="col-md-7">
+              <h1>How can I protect myself from Covid-19?</h1>
+              <p class="line-height text-justify">
+                Coronavirus disease spreads primarily through contact with an
+                infected person when they cough or sneeze. It also spreads when
+                a person touches a surface or object that has the virus on it,
+                then touches their eyes, nose, or mouth.
+              </p>
+              <h5 class="my-3">
+                What should <span class="text-success"> I do?</span>
+              </h5>
+              <div class="row pt-3 mx-auto text-center">
+                <div
+                  class="col-md-4 col-lg-3 border rounded text-center pt-3 mx-auto my-2"
+                >
+                  <img src="./assets/facemask.png" alt="" class="img-fluid" />
+                  <h6 class="py-3">Wear a facemask</h6>
+                </div>
+                <div
+                  class="col-md-4 col-lg-3 border rounded text-center pt-3 mx-auto my-2"
+                >
+                  <img src="./assets/facetouch.png" alt="" class="img-fluid" />
+                  <h6 class="py-3">Don't touch your face</h6>
+                </div>
+                <div
+                  class="col-md-4 col-lg-3 border rounded text-center pt-3 mx-auto my-2"
+                >
+                  <img src="./assets/handshake.png" alt="" class="img-fluid" />
+                  <h6 class="py-3">Avoid handshake</h6>
+                </div>
+              </div>
+              <div class="row pb-3 mx-auto text-center">
+                <div
+                  class="col-md-3 border rounded text-center pt-3 mx-auto my-2"
+                >
+                  <img src="./assets/distancing.png" alt="" class="img-fluid" />
+                  <h6 class="py-3">Keep safe distance</h6>
+                </div>
+                <div
+                  class="col-md-3 border rounded text-center pt-3 mx-auto my-2"
+                >
+                  <img src="./assets/lockdown.png" alt="" class="img-fluid" />
+                  <h6 class="py-3">Stay at home if you can</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer id="footer" class="pos-rel">
+        <div class="container-fluid bg-white">
+          <div class="row p-5">
+            <div class="col-md-5">
+              <div class="text-primary">
+                <img src="./assets/logo.png" alt="logo" />
+                <span class="text-primary">COV19Strain</span>
+              </div>
+              <div class="source mt-3">
+                <h6 class="text-primary"><strong> Source:</strong></h6>
+                <p class="text-justify line-height">
+                  The infos on this this webpage were crawled from WHO, images
+                  were downloaded from Pixaybay and Pexels, Icons were
+                  downloaded from Iconfinder and Flaticons.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-3 mx-auto">
+              <h5 class="text-primary"><strong>Useful Links</strong></h5>
+              <div class="links">
+                <a href=""><p>Who Information</p></a>
+                <a href=""><p>Covid 19 Wikipedia</p></a>
+                <a href=""><p>World News from Covid 19</p></a>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <h5 class="text-primary">
+                <strong>Emergency Number to call</strong>
+              </h5>
+              <p>+2348030000000, 5739 00030300</p>
+            </div>
+            <div class="footer-circle"></div>
+          </div>
+        </div>
+      </footer>
+    </section>
+    <section id="loading" class="bg-white pos-abs">
+      <div class="container my-5">
+        <div class="row my-5">
+          <div class="col-md-6 mx-auto text-center align-items-center my-5">
+            <div class="lds-hourglass"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- jQuery -->
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!---------------------- CDNs----------------- -->
+    <!-- jQuery CDN -->
+    <!-- <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script> -->
+    <!-- ajax CDN -->
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script> -->
+    <!-- BootstrapJS CDN -->
+    <!-- <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script> -->
+    <!-- aos js -->
+    <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+
+    <!-- my scripts -->
+    <script src="./js/ui.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
