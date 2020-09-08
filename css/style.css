@@ -97,15 +97,6 @@ a {
   text-decoration: none !important;
   color: black;
 }
-.text-deco:hover {
-  color: white !important;
-}
-.underline {
-  width: 20%;
-  height: 5px;
-  margin: 0 auto;
-  background-color: green;
-}
 
 .total-cases {
   background-color: rgba(43, 111, 243, 0.05);
@@ -147,6 +138,8 @@ a {
   opacity: 0.5;
   background: rgba(43, 111, 243, 0.07);
 }
+
+/* MEDIAQUERIES */
 @media screen and (max-width: 425px) {
   .footer-circle {
     width: 200px;
@@ -166,6 +159,15 @@ a {
   }
 }
 
+.pointer {
+  cursor: pointer;
+}
+
+.active {
+  color: inherit !important;
+  background-color: rgb(231, 231, 231) !important;
+}
+
 .text-orange {
   color: orange;
 }
@@ -181,6 +183,8 @@ a {
   width: 100vw;
   top: 0px;
 }
+
+/* LOADERCSS */
 .lds-hourglass {
   display: inline-block;
   position: relative;
@@ -212,14 +216,11 @@ a {
     transform: rotate(1800deg);
   }
 }
-
-/* @media screen and (max-width: 425px) {
-  #symptoms {
-    background: linear-gradient(
-        to left,
-        rgba(221, 224, 224, 0.5),
-        rgba(255, 255, 255, 0.5)
-      ),
-      url("../assets/doctor.png") top/cover no-repeat;
-  }
-} */
+/* ATTRIBUTION */
+.attribution {
+  font-size: 13px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

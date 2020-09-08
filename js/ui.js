@@ -71,7 +71,7 @@ const topCountries = (value) => {
   let topRated = `
     ${value
       .map((cased) => {
-        return `<li class="list-group-item border-0 font-weight-bold d-flex align-items-center" id = ${
+        return `<li class="list-group-item border-0 font-weight-bold d-flex align-items-center pointer top-countries" id = ${
           cased.CountryCode
         }>
         <img src="https://www.countryflags.io/${

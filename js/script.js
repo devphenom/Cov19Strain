@@ -16,7 +16,7 @@ fetch("https://api.covid19api.com/summary")
 
 const errorAlert = () => {
   alert(
-    `<h1>Unable to fetch data. Check your internet connection or you contact your internet service protocol</h1>`
+    `Unable to fetch data. Check your internet connection and refresh this page`
   );
 };
 
@@ -33,6 +33,7 @@ const andle = (array) => {
     topCountries(topCases);
     dateUpdate(date);
     recordPerCountryCode(topCases[0]);
+    document.getElementsByClassName("top-countries")[0].classList.add("active");
 
     casedDiv.addEventListener("click", (event) => {
       let theEvent;
