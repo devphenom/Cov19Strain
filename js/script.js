@@ -9,17 +9,16 @@ $(document).ready(function () {
 let update = document.getElementsByClassName("updated-time");
 
 let casedDiv = document.getElementById("top-cases");
-fetch("http://api.covid19api.com/summary")
+fetch("https://api.covid19api.com/summary")
   .then((res) => res.json())
   .then((res) => andle(res))
-  .catch((error) => alert());
-// .then((res) => console.log(res));\\
+  .catch((error) => errorAlert());
 
-// const alert = () => {
-//   alert(
-//     `<h1>Unable to fetch data. Check your internet connection or you contact your internet service protocol</h1>`
-//   );
-// };
+const errorAlert = () => {
+  alert(
+    `<h1>Unable to fetch data. Check your internet connection or you contact your internet service protocol</h1>`
+  );
+};
 
 const andle = (array) => {
   if (array.Message === "Caching in progress") {
