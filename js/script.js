@@ -12,12 +12,14 @@ let casedDiv = document.getElementById("top-cases");
 fetch("http://api.covid19api.com/summary")
   .then((res) => res.json())
   .then((res) => andle(res))
-  .catch((error) =>
-    console.log(
-      "Unable to fetch data. Check your internet connection or you contact your internet service protocol"
-    )
-  );
+  .catch((error) => alert());
 // .then((res) => console.log(res));\\
+
+// const alert = () => {
+//   alert(
+//     `<h1>Unable to fetch data. Check your internet connection or you contact your internet service protocol</h1>`
+//   );
+// };
 
 const andle = (array) => {
   if (array.Message === "Caching in progress") {

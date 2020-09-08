@@ -161,6 +161,9 @@ a {
   .col-5 p {
     font-size: 0.8rem;
   }
+  h1 {
+    font-size: 2rem;
+  }
 }
 
 .text-orange {
