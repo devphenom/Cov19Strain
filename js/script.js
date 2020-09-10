@@ -1,5 +1,5 @@
 // AOS.init();
-
+let eachTopCountries = document.getElementsByClassName("top-countries");
 $(document).ready(function () {
   $(".navbar-toggler").on("click", function () {
     $(".animated-icon3").toggleClass("open");
@@ -33,7 +33,8 @@ const andle = (array) => {
     topCountries(topCases);
     dateUpdate(date);
     recordPerCountryCode(topCases[0]);
-    document.getElementsByClassName("top-countries")[0].classList.add("active");
+
+    // eachTopCountries[0].classList.add("active");
 
     casedDiv.addEventListener("click", (event) => {
       let theEvent;
@@ -51,6 +52,13 @@ const andle = (array) => {
         }
       }
     });
+    for (var i = 0; i < eachTopCountries.length; i++) {
+      eachTopCountries[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
     document.getElementById("body").classList.remove("d-none");
     document.getElementById("loading").classList.add("d-none");
   }

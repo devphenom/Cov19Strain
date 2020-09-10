@@ -159,13 +159,13 @@ a {
   }
 }
 
-.pointer {
-  cursor: pointer;
+.active {
+  background-color: rgb(231, 231, 231) !important;
+  color: black !important;
 }
 
-.active {
-  color: inherit !important;
-  background-color: rgb(231, 231, 231) !important;
+.pointer {
+  cursor: pointer;
 }
 
 .text-orange {
