@@ -1,7 +1,6 @@
 const globalRecord = (globalRec) => {
-  document.getElementById(
-    "totalConfirmed"
-  ).innerText = globalRec.TotalConfirmed.toLocaleString("en");
+  document.getElementById("totalConfirmed").innerText =
+    globalRec.TotalConfirmed.toLocaleString("en");
   document.getElementById(
     "newConfirmed"
   ).innerText = `+${globalRec.NewConfirmed.toLocaleString("en")}`;
@@ -11,15 +10,13 @@ const globalRecord = (globalRec) => {
   document.getElementById("newActive").innerText = `+${(
     globalRec.NewConfirmed - globalRec.NewRecovered
   ).toLocaleString("en")}`;
-  document.getElementById(
-    "totalRecovered"
-  ).innerText = globalRec.TotalRecovered.toLocaleString("en");
+  document.getElementById("totalRecovered").innerText =
+    globalRec.TotalRecovered.toLocaleString("en");
   document.getElementById(
     "newRecovered"
   ).innerText = `+${globalRec.NewRecovered.toLocaleString("en")}`;
-  document.getElementById(
-    "totalDeath"
-  ).innerText = globalRec.TotalDeaths.toLocaleString("en");
+  document.getElementById("totalDeath").innerText =
+    globalRec.TotalDeaths.toLocaleString("en");
   document.getElementById(
     "newDeath"
   ).innerText = `+${globalRec.NewDeaths.toLocaleString("en")}`;
@@ -74,9 +71,8 @@ const topCountries = (value) => {
         return `<li class="list-group-item border-0 font-weight-bold d-flex align-items-center pointer top-countries" id = ${
           cased.CountryCode
         }>
-        <img src="https://www.countryflags.io/${
-          cased.CountryCode
-        }/shiny/32.png"class="img-fluid mr-2"/>
+        <img src="
+        https://flagcdn.com/16x12/${cased.CountryCode.toLowerCase()}.png" class="img-fluid mr-2"/>
         ${cased.Country}
         <div class="ml-auto text-primary">${cased.TotalConfirmed.toLocaleString(
           "en"
